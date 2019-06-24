@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+
+	<head>
+
+		<meta charset="utf-8" />
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<%row tn="cn_seo" fd="__typeid" value="266" item="seo"%>
+
+		<meta name="Keywords" content="<%$seo.keywords%>"/>
+
+		<meta name="Description" content="<%$seo.description%>" />
+
+		<meta name="author" content="">
+
+
+
+		<link href="css/bootstrap.css" rel="stylesheet" />
+
+		<link href="css/style.css" rel="stylesheet" />
+
+
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lt IE 9]>
+
+		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+
+		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
+		<![endif]-->
+
+		<title><%$seo.title%></title>
+
+	</head>
+
+	<body>
+
+		<%$_GET['daohang_k']=7;%>
+
+		<%include ./?head.html%>
+
+		<%row tn="cn_banner_img" fd="__typeid" value="267" item="banner"%>
+
+		<section id="main-banner">
+
+			<div class="container">
+
+				<a href="<%$banner.link%>"><img src="<%$banner.img_path%>" /></a>
+
+			</div>
+
+		</section>
+
+		<%row tn="cn_human_department" fd="id" value="$lm" item="lminfo"%>
+
+		<%$_GET['tp']=$VAL['lminfo']['__typeid']%>
+
+		<%row tn="mx_menu" fd="id" value="$tp" item="localset"%>
+
+		<section id="content">
+
+			<div class="container">
+
+				<div class="breadcrumbs">
+
+					<a href="{WEB_APP}">首页</a>
+
+					<span>&gt;</span>
+
+					<a href="{WEB_APP}?hr_all.html">人力地图</a>
+
+				</div>
+
+				<div class="row">
+
+					<div class="col-side">						
+
+						<%include ./?hr_left.html%>
+
+					</div>
+
+					<div class="col-main employee">
+
+						<div class="search-box">
+
+							<form name="search_yuangong_form" enctype="application/x-www-form-urlencoded" method="post" onsubmit="return ygsearchsubmit();" style="display:inline;">
+
+								<label>员工检索：</label>
+
+								<input name="yg_keyword" type="text" class="search-input" placeholder="姓名、邮箱、内部电话、手机"/>
+
+								<button class="search-btn" type="submit">
+
+									搜索
+
+								</button>
+
+							</form>
+
+						</div>
+
+						<h3><%$localset.title%><%$lminfo.department%>员工信息表</h3>
+
+						<table class="table table-bordered ">
+
+							<thead>
+							
+								<tr>
+
+									<th class="nowrap">姓名</th>
+
+									<th class="nowrap">性别</th>
+
+									<th>职务/职位</th>
+
+									<th class="nowrap">固定电话</th>
+
+									<th class="nowrap">手机</th>
+
+									<th class="nowrap">E-mail</th>
+
+									<th class="nowrap">工作地点</th>
+
+								</tr>
+
+							</thead>
+
+							<tbody>
+						
+								<%loop tn="cn_yuangong" where="leibie=$lm" order="__handsort desc,id asc"%>
+								<tr>
+							
+									<td class="nowrap"><a href="/?person_info/id/<%$list.id%>.html"><%$list.name%></a></td>
+									
+									<td class="nowrap"><%$list.sex%></td>
+
+									<td><%$list.zhiwu%></td>
+								<%if($VAL["list"]["phone"] == "无"){%>
+									<td class="nowrap"></td>
+								<%}else{%>
+									<td class="nowrap"><%$list.phone%></td>
+								<%}%>
+									
+
+									<td class="nowrap"><%$list.telphone%></td>
+
+									<td class="nowrap"><%$list.email%></td>
+
+									<td class="nowrap"><%$list.place%></td>
+
+							
+								</tr>
+								<%/loop%>								
+
+							</tbody>
+
+						</table>
+
+					</div>
+						
+				</div>
+
+			</div>
+
+		</section>
+
+		<%include ./?foot.html%>
+
+		<script src="script/jquery-1.11.2.js"></script>
+
+		<script type="text/javascript">
+
+			//表单搜索
+
+			function ygsearchsubmit()
+
+			{
+
+				var _keyword = $('input[name="yg_keyword"]').val();	
+
+				var _t = "<%echo $_GET['tp'];%>";
+
+				if(_keyword=='' || _keyword=='姓名、邮箱、内部电话、手机'){
+
+					alert('请输入姓名、邮箱、内部电话、手机');
+
+					return false;
+
+				}				
+
+				document.location = '{WEB_APP}?yuangong_search/k/'+encodeURI(_keyword)+'.html';				
+
+				return false;
+ 
+			}
+
+		</script>
+
+		<style type="text/css">
+
+		.nowrap{word-break: keep-all;white-space:nowrap;}
+
+		</style>
+
+	</body>
+
+</html>

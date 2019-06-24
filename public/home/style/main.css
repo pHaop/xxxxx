@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+/* CSS Document */
+html { font-size: 10px; /*font-size:62.5%;*/ }
+body { margin: 0px; padding: 0px; font-size: 1.2rem; font-family: Arial, "微软雅黑"; color: #333; }
+a { color: #333; text-decoration: none; outline: none; }
+a:active { star: expression(this.onFocus=this.blur()); }
+img { border: 0px; }
+a:link { text-decoration: none; outline: none; }
+a:visited { text-decoration: none; outline: none; }
+a:hover { text-decoration: none; color: #333; outline: none; }
+ul, ol, p, dl, dt, dd { padding: 0px; margin: 0px; }
+li { list-style-position: outside; list-style-type: none; }
+h1, h2, h3, h4, h5 { font-size: 14px; padding: 0px; margin: 0px; }
+h1 { font-size: 1.6rem; }
+h5 { font-size: 1.2rem; }
+.fl { float: left; }
+.fr { float: right; }
+.clear { clear: both; height: 0px; padding: 0px; margin: 0px; display: block; _display: inherit; }
+.h10 { height: 1rem; overflow: hidden; clear: both; }
+.h50 { height: 5rem; overflow: hidden; clear: both; }
+input { background: transparent; padding: 0px; font-size: 1.2rem; font-family: Arial, "微软雅黑"; color: #888; outline: none; border: 0px; }
+em { font-style: normal; }
+.btn1 { cursor: pointer; }
+img { vertical-align: middle; max-width: 100%; }
+.red, a.red { color: #ff0037; }
+.green { color: #88c22f; }
+
+/*opacity:1; filter:alpha(opacity=1);*/
+.wal { width: 1070px; margin: 0px auto; }
+a, .transition, .indexNews li, .indexNews .box, .indexNews img, .indexNews .content, .indexProduct .title, .indexProduct .roundDiv div, .indexProduct .btn, .indexProduct .btn.on2 li, .indexProduct .box, .chinaMap .layer, .indexPart1 .sectionLayer, .indexMap ol .layer { transition: All 0.5s ease; -webkit-transition: All 0.5s ease; -moz-transition: All 0.5s ease; -o-transition: All 0.5s ease; }
+.radius3 { -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+.radius { -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px; }
+.indexProduct .round1, .indexProduct .round2, .indexProduct .round3, .indexProduct .btn dd, .indexProduct .btn li, .indexMap li, .indexMap span, #menu a, .indexMap .mapLine { -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; }
+input, li, a, span, i, em, b, div, img, textarea, p, dl, dt, dd, h1, h2 { box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+.aaaa { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.headDiv { position: fixed; z-index: 30; left: 0px; top: 0px; width: 100%; }
+.headDiv .wal { width: 1310px; height: 80px; position: relative; }
+.headDiv .logo { position: absolute; left: 0px; top: 19px; display: block; background: url(../image/logo.png) center no-repeat; width: 177px; height: 41px; }
+.topSearch { position: absolute; top: 27px; right: 88px; background: url(../image/topSearch.png) center no-repeat; width: 138px; height: 26px; }
+.topSearch .input1 { width: 100%; height: 26px; line-height: 26px; padding: 0 10px; color: rgba(255, 255, 255, 0.7); }
+.topSearch .btn1 { position: absolute; top: 0px; right: 0px; width: 36px; height: 26px; }
+.topBtn { position: absolute; top: 27px; right: -10px; }
+.topBtn li { float: left; }
+.topBtn a { display: block; line-height: 26px; color: #ccc; font-size: 14px; padding: 0 10px; }
+.topBtn a.on { background: #edc72d; color: #333; }
+.nav { position: absolute; left: 250px; top: 0px; }
+.nav li { float: left; }
+.nav a { display: block; line-height: 80px; padding: 0 18px; color: #FFF; font-size: 16px; }
+
+/**/
+.headDiv.on .logo { background: url(../image/logoon.png) center no-repeat; }
+.headDiv.on .topSearch { background: url(../image/topSearchon.png) center no-repeat; }
+.headDiv.on .nav a { color: #333; }
+.sNav { position: absolute; z-index: 30; left: 0px; top: 100px; width: 100%; min-height: 372px; background: rgba(0, 0, 0, 0.5); opacity: 0; filter: alpha(opacity=0); visibility: hidden; }
+.sNav.on { opacity: 1; filter: alpha(opacity=1); visibility: visible; top: 80px; }
+.sNav .wal { width: 1310px; padding-top: 28px; }
+.sNav li { float: left; font-size: 15px; line-height: 40px; width: 100px; position: relative; left: 270px; }
+.sNav a { color: #FFF; }
+.sNav a:hover { color: #f4d10d; }
+.tabContent { display: none; }
+.tab li { cursor: pointer; }
+
+/* 其他页面导航 */
+.headerDiv { position: relative; z-index: 30; left: 0px; top: 0px; width: 100%; background: #fff; }
+.headerDiv .wal { width: 1310px; height: 80px; position: relative; }
+.headerDiv .logo { position: absolute; left: 0px; top: 19px; display: block; background: url(../image/logo-1.png) center no-repeat; width: 177px; height: 41px; }
+.headerDiv .topSearch { position: absolute; top: 27px; right: 88px; background: url(../image/topSearchon.png) center no-repeat; width: 138px; height: 26px; }
+.headerDiv .topSearch .input1 { width: 100%; height: 26px; line-height: 26px; padding: 0 10px; color: rgba(255, 255, 255, 0.7); }
+.headerDiv .topSearch .btn1 { position: absolute; top: 0px; right: 0px; width: 36px; height: 26px; }
+.headerDiv .topBtn { position: absolute; top: 27px; right: -10px; }
+.headerDiv .topBtn li { float: left; }
+.headerDiv .topBtn a { display: block; line-height: 26px; color: #ccc; font-size: 14px; padding: 0 10px; }
+.headerDiv .topBtn a.on { background: #edc72d; color: #333; }
+.headerDiv .nav { position: absolute; left: 250px; top: 0px; }
+.headerDiv .nav li { float: left; }
+.headerDiv .nav a { display: block; line-height: 80px; padding: 0 18px; color: #333; font-size: 16px; }
+.headerDiv .nav a.on { color: #7f1085; }
+.headerDiv .nav a:hover { color: #7f1085; }
+
+/**/
+.headerDiv.on .logo { background: url(../image/logoon.png) center no-repeat; }
+.headerDiv.on .topSearch { background: url(../image/topSearchon.png) center no-repeat; }
+.headerDiv.on .nav a { color: #333; }
+@font-face { font-family: 'DINCondLight'; src: url('fonts/DINCondLight.eot'); src: url('fonts/DINCondLight.eot') format('embedded-opentype'), url('fonts/DINCondLight.woff2') format('woff2'), url('fonts/DINCondLight.woff') format('woff'), url('fonts/DINCondLight.ttf') format('truetype'), url('fonts/DINCondLight.svg#DINCondLight') format('svg'); }
